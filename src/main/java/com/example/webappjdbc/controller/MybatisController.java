@@ -99,4 +99,18 @@ public class MybatisController {
         }
         return service.list();
     }
+    @GetMapping("lb")
+    public List<Trade> lb() {
+        for (int i = 0; i < 100; i++) {
+            List<Trade> list = service.list();
+            log.info(list.toString());
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            log.info("Query: " + i);
+        }
+        return service.list();
+    }
 }
