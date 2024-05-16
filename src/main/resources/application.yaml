@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: web-app-jdbc
+  datasource:
+    url: jdbc:avatica:remote:url=http://localhost:18081
+    driver-class-name: org.apache.calcite.avatica.remote.Driver
+server:
+  port: 9080
